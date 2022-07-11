@@ -1,2 +1,1 @@
-# for-product-
-for checking
+This project for cheking product
