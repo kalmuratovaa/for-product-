@@ -14,7 +14,7 @@ function onFormSubmit() {
 function readFormData() {
     var formData = {};
     formData["fullName"] = document.getElementById("fullName").value;
-    formData["id"] = document.getElementById("id").value;
+    formData["empCode"] = document.getElementById("empCode").value;
     formData["quantity"] = document.getElementById("quantity").value;
     formData["city"] = document.getElementById("city").value;
     return formData;
@@ -26,7 +26,7 @@ function insertNewRecord(data) {
     cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.fullName;
     cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.id;
+    cell2.innerHTML = data.empCode;
     cell3 = newRow.insertCell(2);
     cell3.innerHTML = data.quantity;
     cell4 = newRow.insertCell(3);
@@ -38,7 +38,7 @@ function insertNewRecord(data) {
 
 function resetForm() {
     document.getElementById("fullName").value = "";
-    document.getElementById("id").value = "";
+    document.getElementById("empCode").value = "";
     document.getElementById("quantity").value = "";
     document.getElementById("city").value = "";
     selectedRow = null;
@@ -47,14 +47,14 @@ function resetForm() {
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("id").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
     document.getElementById("quantity").value = selectedRow.cells[2].innerHTML;
     document.getElementById("city").value = selectedRow.cells[3].innerHTML;
 }
 
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
-    selectedRow.cells[1].innerHTML = formData.id;
+    selectedRow.cells[1].innerHTML = formData.empCode;
     selectedRow.cells[2].innerHTML = formData.quantity;
     selectedRow.cells[3].innerHTML = formData.city;
 }
